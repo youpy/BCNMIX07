@@ -1,5 +1,10 @@
 var app = new Soundwwwalk.App();
 
+var timeoutId = setTimeout(function() {
+  if(app.started)
+    app.stop();
+}, 20 * 60 * 1000);
+
 app.register('http://youtu.be/CsGtzbwXwSo?t=1m35s', {
   closeAfter: (8 * 60 + 19) * 1000
 });
@@ -62,7 +67,9 @@ app.register('http://www.youtube.com/watch?v=1F_IP5fHAvw', {
   wait: 700000,
   closeAfter: (60 * 7 + 10) * 1000,
   onClose: function() {
-    app.stop();
+    app.stop(function() {
+      clearTimeout(timeoutId);
+    });
   }
 });
 
@@ -86,12 +93,9 @@ app.register('http://youtu.be/38Sh2BO6wZs?t=1m3s', {
   closeAfter: (4 * 60 + 30) * 1000
 });
 
-setTimeout(function() {
-  if(app.started)
-    app.stop();
-}, 20 * 60 * 1000);
-
 chrome.browserAction.onClicked.addListener(function() {
-  app.started ? app.stop() : app.start();
+  app.started ? app.stop(function() {
+    clearTimeout(timeoutId);
+  }) : app.start();
 });
 

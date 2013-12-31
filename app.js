@@ -53,7 +53,7 @@
                 that.tabs.splice(that.tabs.indexOf(tab), 1);
 
                 if(options.onClose)
-                  options.onClose.apply(null, []);
+                  options.onClose.call(null);
               }, options.closeAfter);
 
               that.timers.push(timer);
@@ -65,7 +65,7 @@
       });
     },
 
-    stop: function() {
+    stop: function(fn) {
       this.started = false;
 
       _.each(this.tabs, function(tab) {
@@ -81,6 +81,10 @@
         clearInterval(interval);
       });
 
+      if(fn) {
+        fn.call(null);
+      }
+
       this.tabs    = [];
       this.timers  = [];
       this.started = false;
@@ -90,6 +94,7 @@
   global.Soundwwwalk = global.Soundwwwalk || {};
   global.Soundwwwalk.App = App;
 })(window);
+
 
 
 
