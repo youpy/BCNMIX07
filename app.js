@@ -5,7 +5,7 @@ $(function() {
     };
     
     $.extend(App.prototype, {
-      init     : function() {
+      init: function() {
         this.instruments = [];
         this.tabs        = [];
         this.timers      = [];
@@ -13,13 +13,13 @@ $(function() {
         this.intervals   = [];
       },
       
-      register : function(url, options) {
+      register: function(url, options) {
         var options = options || {};
 
         this.instruments.push([url, options]);
       },
 
-      start    : function() {
+      start: function() {
         var that = this;
 
         this.started = true;
@@ -40,7 +40,7 @@ $(function() {
 
           timer = setTimeout(function() {
             chrome.tabs.create({
-              url : url
+              url: url
             }, function(tab) {
               var timer;
 
@@ -66,7 +66,7 @@ $(function() {
         });
       },
 
-      stop     : function() {
+      stop: function() {
         this.started = false;
 
         _.each(this.tabs, function(tab) {
