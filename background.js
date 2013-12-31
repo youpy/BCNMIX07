@@ -18,10 +18,10 @@ app.register('http://youtu.be/3AhSUOiokBs?t=25s', {
   closeAfter: 4 * 60 * 1000
 });
 
-// app.register('http://www.youtube.com/watch?v=MnPobgmdYXU', {
-//   wait: 400000,
-//   closeAfter: (4 * 60) * 1000
-// });
+app.register('http://www.youtube.com/watch?v=czTw2dS5dtE', {
+  wait: 450000,
+  closeAfter: (2 * 60 + 46) * 1000
+});
 
 app.register('http://www.youtube.com/watch?v=0eQjn8I7G4M', {
   wait: 430000,
@@ -37,11 +37,6 @@ app.register('http://www.youtube.com/watch?v=vROdVsU_K80', {
   wait: 320000,
   closeAfter: (1 * 60 + 40) * 1000
 });
-
-// app.register('http://youtu.be/PF7m-ztTRWY?t=24s', {
-//   wait: 500000,
-//   closeAfter: (8 * 60 + 30) * 1000
-// });
 
 app.register('http://youtu.be/dq6T5BojXc8?t=11s', {
   wait: 500000,
@@ -71,6 +66,11 @@ app.register('http://www.youtube.com/watch?v=1F_IP5fHAvw', {
   }
 });
 
+app.register('http://youtu.be/-mrZGMv2-ME?t=2m35s', {
+  wait: 730000,
+  closeAfter: (2 * 60) * 1000
+});
+
 app.register('http://youtu.be/web4QKwSzS8', {
   wait: 750000,
   closeAfter: 30 * 1000
@@ -94,3 +94,4 @@ setTimeout(function() {
 chrome.browserAction.onClicked.addListener(function() {
   app.started ? app.stop() : app.start();
 });
+
