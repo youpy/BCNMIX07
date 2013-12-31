@@ -1,18 +1,20 @@
 {
-  "name" : "Soundwwwalk",
+  "name" : "BCNMIX07 youpy - Washing Machines",
   "version" : "0.0.1",
+  "author" : "youpy",
   "icons" : {
      "16" : "icon.png",
      "48" : "icon.png",
      "128" : "icon.png"
   },
-  "description" : "Soundwwwalk extension",
+  "description" : "BCNMIX07",
   "background" : {
     "scripts" : ["underscore-min.js", "app.js", "background.js"]
   },
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Soundwwwalk"
+    "default_title": "BCNMIX07 youpy - Washing Machines"
   },
-  "manifest_version" : 2
+  "manifest_version" : 2,
+  "update_url" : "http://dl.dropboxusercontent.com/u/334064/bacon_mix/update.xml"
 }
