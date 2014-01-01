@@ -15,6 +15,5 @@
     "default_icon": "icon.png",
     "default_title": "BCNMIX07 youpy - Washing Machines"
   },
-  "manifest_version" : 2,
-  "update_url" : "http://dl.dropboxusercontent.com/u/334064/bacon_mix/update.xml"
+  "manifest_version" : 2
 }
